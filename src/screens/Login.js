@@ -40,7 +40,9 @@ export default function Login() {
       localStorage.setItem("userEmail", data.email);
       localStorage.setItem("userName", data.name);
 
-      alert("🎉 Login successful!");
+      window.dispatchEvent(new Event("loginEvent"));
+
+      alert(" Login successful!");
       navigate("/"); // redirect to home page
 
     } catch (error) {
