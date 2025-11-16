@@ -76,8 +76,8 @@ export default function MyOrders() {
               >
                 <h4 className="text-primary mb-3 border-bottom pb-2">
                   Order Date:{" "}
-                  {order.orderDate
-                    ? new Date(order.orderDate).toLocaleString()
+                  {order.date
+                    ? new Date(order.date).toLocaleString()
                     : "N/A"}
                 </h4>
 
@@ -94,7 +94,7 @@ export default function MyOrders() {
                       </div>
 
                       <div className="text-end" style={{ color: "#555" }}>
-                        Qty: {item.quantity} | Size: {item.size} <br />
+                        Qty: {item.qty} | Size: {item.size} <br />
                         Price: ₹{item.price}
                       </div>
                     </div>
