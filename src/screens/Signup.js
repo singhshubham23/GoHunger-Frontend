@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";  
+import { Link, useNavigate } from "react-router-dom";
 const navigate = useNavigate();
 export default function Signup() {
   const [formData, setFormData] = useState({
