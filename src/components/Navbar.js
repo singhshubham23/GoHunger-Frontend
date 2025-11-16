@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useCart } from "./ContextReducer";
 import CartModal from "./CartModal";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [userName, setUserName] = useState(
     localStorage.getItem("userName") || ""
   );
@@ -37,6 +39,8 @@ const Navbar = () => {
     setShowCart(false);
 
     window.dispatchEvent(new Event("loginEvent"));
+    
+    navigate("/login");
   };
 
   const totalQty = cartItems.reduce(
@@ -121,7 +125,7 @@ const Navbar = () => {
                       </span>{" "}
                     </li>
                   )}
-                  {/* 🌟 FIX: ADDING THE MY ORDERS LINK HERE */}
+                
                   <li className="nav-item mx-lg-2 mb-2 mb-lg-0">
                     <Link
                       className="btn fs-6 fs-lg-5 bg-white text-success w-100 w-lg-auto"
@@ -149,7 +153,7 @@ const Navbar = () => {
                       )}{" "}
                     </button>{" "}
                   </li>
-                  {/* Logout Button */}{" "}
+                  {" "}
                   <li className="nav-item">
                     {" "}
                     <button
