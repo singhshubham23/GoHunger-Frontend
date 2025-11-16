@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";  
-
+const navigate = useNavigate();
 export default function Signup() {
   const [formData, setFormData] = useState({
     name: "",
@@ -31,6 +31,7 @@ export default function Signup() {
       const json = await res.json();
       console.log("Server response:", json);
       alert(json.message);
+      navigate("/login");
     } catch (err) {
       console.error("Fetch error:", err);
       alert("Request failed—check console.");
