@@ -1,0 +1,19 @@
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navbar + .position-relative {
+  margin-top: 0 !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
